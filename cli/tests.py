@@ -1,6 +1,6 @@
 from typer.testing import CliRunner
-from cli.cli import app  # Doğrudan app'i main.py'den alıyoruz
-from cli import __app_name__, __version__
+from cli import app
+from __init__ import __app_name__, __version__
 
 runner = CliRunner()
 

@@ -1,4 +1,4 @@
-import cli 
+import cli
 from __init__ import __app_name__
 
 def main():
