@@ -2,7 +2,7 @@ from typing import Optional
 
 import typer
 
-from __init__ import __app_name__, __version__
+from cli.__init__ import __app_name__, __version__
 
 app = typer.Typer()
 
