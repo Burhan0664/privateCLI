@@ -1,19 +1,19 @@
-"""This module provides the RP To-Do config functionality."""
-# rptodo/config.py
 
-import configparser
-from pathlib import Path
+import configparser # like converter
+from pathlib import Path # path configure
 
 import typer
 
-from rptodo import (
-    DB_WRITE_ERROR, DIR_ERROR, FILE_ERROR, SUCCESS, __app_name_
+from cli import (
+    DB_WRITE_ERROR, DIR_ERROR, FILE_ERROR, SUCCESS, __app_name_ # neccesary file 
 )
 
-CONFIG_DIR_PATH = Path(typer.get_app_dir(__app_name__))
-CONFIG_FILE_PATH = CONFIG_DIR_PATH / "config.ini"
+CONFIG_DIR_PATH = Path(typer.get_app_dir(__app_name__)) #get the file path where is your hold in computer
+CONFIG_FILE_PATH = CONFIG_DIR_PATH / "config.ini" #hold the configuration file itself directly
 
-def init_app(db_path: str) -> int:
+
+#initialize and contain function of both of function like main func
+def init_app(db_path: str) -> int: 
     """Initialize the application."""
     config_code = _init_config_file()
     if config_code != SUCCESS:
@@ -23,6 +23,7 @@ def init_app(db_path: str) -> int:
         return database_code
     return SUCCESS
 
+#initialize config file and establish file itself your path
 def _init_config_file() -> int:
     try:
         CONFIG_DIR_PATH.mkdir(exist_ok=True)
@@ -34,6 +35,8 @@ def _init_config_file() -> int:
         return FILE_ERROR
     return SUCCESS
 
+
+#open db and w command is commit on your path 
 def _create_database(db_path: str) -> int:
     config_parser = configparser.ConfigParser()
     config_parser["General"] = {"database": db_path}
