@@ -4,8 +4,8 @@ from pathlib import Path # path configure
 
 import typer
 
-from cli import (
-    DB_WRITE_ERROR, DIR_ERROR, FILE_ERROR, SUCCESS, __app_name_ # neccesary file 
+from cli.__init__ import (
+    DB_WRITE_ERROR, DIR_ERROR, FILE_ERROR, SUCCESS, __app_name__ # neccesary file 
 )
 
 CONFIG_DIR_PATH = Path(typer.get_app_dir(__app_name__)) #get the file path where is your hold in computer

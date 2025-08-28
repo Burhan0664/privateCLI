@@ -1,5 +1,5 @@
 from typer.testing import CliRunner
-from cli.cli import app
+from privateCLI.cli.commands import app
 from cli.__init__ import __app_name__, __version__
 
 runner = CliRunner()
